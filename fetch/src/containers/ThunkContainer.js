@@ -1,20 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchWithThunk } from '../actions/thunk';
+import { itemsFetchData, itemsFetchDataOther } from '../actions/thunk/thunkActionsCreators';
 
 class FetchWithThunk extends Component {
   componentDidMount() {
-    const { dispatch } = this.props;
-    dispatch(fetchWithThunk());
+    this.props.fetchData('http://5826ed963900d612000138bd.mockapi.io/items');
+    this.props.fetchDataOther('http://5826ed963900d612000138bd.mockapi.io/items');
   }
 
   render() {
-    const { payload } = this.props;
+    const { hasErrored, isLoading, items } = this.props;
+    if (hasErrored) return <p>Sorry! There was an error loading the items</p>;
+    if (isLoading) return <p>Loading…</p>;
+
     return (
       <div className="App">
         {
-          payload.data.map(result => (
-            <div key={result.id}>{result.full_name}</div>
+          items.map(result => (
+            <div key={result.id}>{result.label}</div>
+          ))
+        }
+        {
+          items.map(result => (
+            <div key={result.id}>{result.label}</div>
           ))
         }
       </div>
@@ -24,8 +32,17 @@ class FetchWithThunk extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    payload: state,
+    items: state.items,
+    hasErrored: state.itemsHasErrored,
+    isLoading: state.itemsIsLoading
   }
 }
 
-export default connect(mapStateToProps)(FetchWithThunk);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchData: (url) => dispatch(itemsFetchData(url)),
+    fetchDataOther: (url) => dispatch(itemsFetchDataOther(url))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(FetchWithThunk);
