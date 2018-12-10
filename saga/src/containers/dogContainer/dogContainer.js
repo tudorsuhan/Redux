@@ -3,10 +3,9 @@ import { connect } from 'react-redux';
 import logo from '../../logo.svg';
 import styles from './dogContainer.module.scss';
 
-class SagaWrapper extends Component {
+class DogSagaWrapper extends Component {
   render() {
     const { fetching, dog, onRequestDog, error } = this.props;
-    console.log(this.props);
     return (
       <div className={styles.dog}>
         <header className={styles.dogHeader}>
@@ -31,9 +30,9 @@ class SagaWrapper extends Component {
 
 const mapStateToProps = state => {
   return {
-    fetching: state.fetching,
-    dog: state.dog,
-    error: state.error
+    fetching: state.dogsFetchReducer.fetching,
+    dog: state.dogsFetchReducer.dog,
+    error: state.dogsFetchReducer.error
   };
 };
 
@@ -43,9 +42,9 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-const SagaContainer = connect(
+const DogsSagaContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(SagaWrapper);
+)(DogSagaWrapper);
 
-export default SagaContainer;
+export default DogsSagaContainer;

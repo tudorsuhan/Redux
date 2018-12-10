@@ -1,0 +1,52 @@
+.article {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: row wrap;
+  margin-bottom: 10px;
+  background: #eee;
+
+  .articleImage {
+    width: 200px;
+    height: 200px;
+    margin-right: 10px;
+    object-fit: cover;
+  }
+
+  .articleWrapper {
+    width: calc(100% - 210px);
+    height: 200px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: row wrap;
+
+    .articleTitle {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #444;
+      margin: 0;
+    }
+
+    .articleDescription {
+      margin: 0;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #bbb;
+    }
+
+    .articleLink {
+      position: relative;
+
+      a {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #222;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

@@ -3,22 +3,33 @@ import createSagaMiddleware from 'redux-saga';
 import { createLogger } from 'redux-logger';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { monitorReducersEnhancer } from '../enhancers/monitorReducers';
-import { rootReducer } from '../reducers/sagaReducer';
-import { watcherSaga } from '../sagas';
+import rootReducer from '../reducers';
+import rootSaga from '../sagas';
 
 const logger = createLogger();
 const enhancers = [monitorReducersEnhancer, logger];
 const composedEnhancers = compose(...enhancers);
 
 export const configStore = () => {
-  const sagaMiddleware = createSagaMiddleware();
+  /**
+   * Create an emitter which "unpacks" array of actions and emits individual actions extracted from the array
+   */
+  const sagaMiddleware = createSagaMiddleware({
+    emitter: emit => action => {
+      if (Array.isArray(action)) {
+        action.forEach(emit);
+        return;
+      }
+      emit(action);
+    }
+  });
 
   const store = createStore(
     rootReducer,
     composeWithDevTools(applyMiddleware(sagaMiddleware, composedEnhancers))
   );
 
-  sagaMiddleware.run(watcherSaga);
+  sagaMiddleware.run(rootSaga);
 
   return store;
 };
