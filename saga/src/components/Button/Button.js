@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { newsRequest } from '../actions/actionCreators';
+import { newsRequest } from '../../actions/actionCreators';
 
 const styles = {
   backgroundColor: 'Grey ',
