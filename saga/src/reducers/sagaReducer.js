@@ -25,16 +25,3 @@ export const newsFetchReducer = (state = {}, action) => {
       return state;
   }
 };
-
-export const appsFetchReducer = (state = false, action) => {
-  switch (action.type) {
-    case 'REQUEST_STATUS':
-      return { ...state, loading: true };
-    case 'REQUEST_SUCCESS':
-      return { ...state, apps: action.apps, loading: false };
-    case 'REQUEST_ERROR':
-      return { ...state, loading: false, error: action.error };
-    default:
-      return state;
-  }
-};

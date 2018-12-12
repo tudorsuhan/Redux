@@ -1,14 +1,9 @@
 import { combineReducers } from 'redux';
-import {
-  dogsFetchReducer,
-  newsFetchReducer,
-  appsFetchReducer
-} from './sagaReducer';
+import { dogsFetchReducer, newsFetchReducer } from './sagaReducer';
 
 const rootReducer = combineReducers({
   dogsFetchReducer,
-  newsFetchReducer,
-  appsFetchReducer
+  newsFetchReducer
 });
 
 export default rootReducer;
