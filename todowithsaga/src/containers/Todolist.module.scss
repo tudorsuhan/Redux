@@ -1,0 +1,10 @@
+.todolist {
+  width: 600px;
+  margin: 50px auto;
+  position: relative;
+  background: transparent;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}

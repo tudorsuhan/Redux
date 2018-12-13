@@ -1,0 +1,18 @@
+.input {
+  position: relative;
+
+  .inputField {
+    width: 100%;
+    background: transparent;
+    border: 2px solid #ddd;
+    outline: none;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+
+    &:focus {
+      will-change: all;
+      border: 2px solid #333;
+    }
+  }
+}
