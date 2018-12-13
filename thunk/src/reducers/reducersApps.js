@@ -12,7 +12,7 @@ export const appsReducerStatus = (state = {}, action) => {
 export const appsReducerSuccess = (state = {}, action) => {
   switch(action.type) {
     case types.REQUEST_SUCCESS: 
-      return { ...state, apps: action.apps, };
+      return { ...state, apps: action.apps, loading: false, error: null, };
     default: 
       return state;
   }

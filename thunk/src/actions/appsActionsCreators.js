@@ -25,3 +25,20 @@ export const fetchApps = () => {
       .catch((error) => dispatch(REQUEST_ERROR(error)))
   }
 }
+
+// export const fetchApps = () => {
+//   return (dispatch) => {
+//     dispatch(REQUEST_STATUS(true));
+//     fetch('http://iphone.softwsp.com/wp-json/wp/v2/posts')
+//       .then((response) => {
+//         if (!response.ok) {
+//           throw Error(response.statusText);
+//         }
+//         dispatch(REQUEST_STATUS(false));
+//         return response;
+//       })
+//       .then((response) => response.json())
+//       .then((apps) => dispatch(REQUEST_SUCCESS(apps)))
+//       .catch(() => dispatch(REQUEST_ERROR(true)));
+//   };
+// }

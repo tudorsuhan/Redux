@@ -4,21 +4,22 @@ import { fetchApps } from '../../actions/appsActionsCreators';
 
 class GetApps extends Component {
   componentDidMount() {
+    // Call the method defined in mapDispatchToProps
     this.props.getAppsWithThunk();
+    // Call the action cretor fetchApps with dispatch
+    // this.props.dispatch(fetchApps())
   }
   
   render() {
-    const { loading, error, apps } = this.props;
-    // if (error) return <p>Sorry! There was an error loading the items</p>;
-    // if (loading) return <p>Loading…</p>;
-    console.log(this.props);
+    const { apps } = this.props;
     return (
       <div>
-        {/* {
-          apps.map(item => (
-            <div key={item.id}>{console.log(item)}</div>
-          ))
-        } */}
+        {
+          Object.keys(apps).map((key) => {
+            return key === 'apps' && 
+            apps.apps.map(app => <div key={app.id}>{app.title.rendered}</div>)
+          })
+        }
       </div>
     );
   }
@@ -28,7 +29,7 @@ const mapStateToProps = state => {
   console.log(state);
   return {
     loading: state.appsReducerStatus,
-    apps: state.appsReducerSuccess.apps,
+    apps: state.appsReducerSuccess,
     error: state.appsReducerError,
   }
 }
