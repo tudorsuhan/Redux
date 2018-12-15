@@ -1,4 +1,5 @@
 import * as actions from './actionTypesTodo';
+import * as actionsFilter from './actionTypesFilter';
 
 export const fetchTodos = () => ({
   type: actions.FETCH_TODOS_REQUESTED,
@@ -10,7 +11,7 @@ export const addTodo = (text) => ({
 });
 
 export const setVisibilityFilter = (filter) => ({
-  type: actions.SET_VISIBILITY_FILTER,
+  type: actionsFilter.SET_VISIBILITY_FILTER,
   filter,
 });
 
