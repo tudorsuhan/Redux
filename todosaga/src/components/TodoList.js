@@ -1,30 +1,27 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import Todo from './Todo';
+import { arrayOf, shape, number, bool, string, func } from 'prop-types';
 
-const TodoList = ({ todos, toggleTodo }) => (
-    <ul>
-        {
-            todos.map(todo => 
-                <Todo 
-                    key={todo.id} 
-                    {...todo} 
-                    onClick={() => toggleTodo(todo.id)}
-                />
-            )
-        }
-    </ul>
-);
+export default class TodoList extends Component {
+    static propTypes = {
+        todos: arrayOf(
+            shape({
+            id: number.isRequired,
+            completed: bool.isRequired,
+                text: string.isRequired
+            }).isRequired
+        ).isRequired,
+        toggleTodo: func.isRequired
+    }
 
-TodoList.propTypes = {
-    todos: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        completed: PropTypes.bool.isRequired,
-        text: PropTypes.string.isRequired
-      }).isRequired
-    ).isRequired,
-    toggleTodo: PropTypes.func.isRequired
+    render() {
+        const { todos, toggleTodo } = this.props;
+        return (
+            <ul>
+                {todos.map(todo => 
+                    <Todo key={todo.id} {...todo} onClick={() => toggleTodo(todo.id)} />
+                )}
+            </ul>
+        );
+    }
 }
-
-export default TodoList;

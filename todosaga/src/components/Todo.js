@@ -5,8 +5,9 @@ class Todo extends Component {
     static propTypes = {
         onClick: func.isRequired,
         completed: bool.isRequired,
-        text: string.isRequired
+        text: string.isRequired,
     }
+    
     render() {
         const { onClick, completed, text } = this.props;
         console.log(this.props);
