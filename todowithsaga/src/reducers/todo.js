@@ -1,5 +1,18 @@
 import * as actions from '../actions/actionTypesTodo';
 
+export const addTodoReducer = (state = [], action) => {
+  switch(action.type) {
+    case actions.ADD_TODO_REQUESTED: 
+      return { ...state }
+    case action.ADD_TODO_SUCCEEDED: 
+      return { ...state, id: action.id, text: action.text, completed: false, }
+    case actions.ADD_TODO_FAILED: 
+      return { ...state, error: action.error, }
+    default: 
+      return state;
+  }
+}
+
 export const todo = (state = [], action) => {
   switch (action.type) {
     case actions.ADD_TODO_SUCCEEDED:

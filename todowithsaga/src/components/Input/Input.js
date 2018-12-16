@@ -18,9 +18,10 @@ class Input extends Component {
     todos: array,
     text: string,
   }
+
   static defaultProps = {
     todos: [''],
-    text: 'Add'
+    text: 'Add todo...'
   }
 
   handleUserInput = (event) => {
@@ -33,10 +34,10 @@ class Input extends Component {
     event.preventDefault();
     if(!this.state.text.length) { return; }
     const newItem = {
-      text: this.state.text,
-      id: Date.now()
+      // text: this.state.text,
+      id: Date.now(),
     }
-    // this.props.dispatch(addTodo(this.state.todos))
+    this.props.dispatch(addTodo(this.state.todos))
     this.setState(state => ({
       todos: state.todos.concat(newItem),
       text: ''

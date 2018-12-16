@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Todo.module.scss';
 
-const Todo = ({ todos, onChange }) => {
+const Todo = ({ todos }) => {
   return(
     todos.map(todo => (
         <li key={todo.id} className={styles.todoLi}>
