@@ -1,0 +1,12 @@
+.noTodos {
+  height: calc(100vh - 200px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-weight: 600;
+    font-size: 2rem;
+    color: #ddd;
+  }
+}
