@@ -9,7 +9,7 @@ const initState = {
   loading: true
 };
 
-export default function todoReducer(state = initState, action) {
+const todoReducer = (state = initState, action) => {
   switch (action.type) {
     case actions.CHANGE_TODO:
       const newTodoText = action.addTodo ? '' : state.newTodoText;
@@ -30,3 +30,5 @@ export default function todoReducer(state = initState, action) {
       return state;
   }
 }
+
+export default todoReducer;
