@@ -35,6 +35,6 @@ export const todos = (state = [], action) => {
         )
       )
     default:
-      return state
+      return state;
   }
 }

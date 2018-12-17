@@ -1,0 +1,18 @@
+.inputTodo {
+  margin: 25px 25px;
+  width: 50%;
+  display: block;
+  border: none;
+  padding: 15px;
+  border: 1px solid #3f3f3f;
+  border-radius: 25px;
+  transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+
+  &:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+  }
+}

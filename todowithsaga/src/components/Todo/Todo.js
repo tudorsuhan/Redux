@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import styles from './Todo.module.scss';
+import { connect } from 'react-redux';
 
-export default class Todo extends Component {
+class Todo extends Component {  
   render() {
+    const { value, onChange } = this.props;
     return (
-      <div className={styles.todo}>
-        Todo Item
+      <div className={styles.todo} onChange={onChange}>
+        {/* { this.props.dispatch(value)  } */}
       </div>
     );
   }
 }
+
+export default connect()(Todo);

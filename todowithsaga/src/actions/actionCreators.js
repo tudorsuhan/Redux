@@ -1,16 +1,15 @@
 import * as actions from './actionTypesTodo';
-
-export const fetchTodos = () => ({
-  type: actions.FETCH_TODOS_REQUESTED,
-});
+import * as actionsFilter from './actionTypesFilter';
+const uuidv1 = require('uuid/v1');
 
 export const addTodo = (text) => ({
   type: actions.ADD_TODO_REQUESTED,
-  text,
+  id: uuidv1(),
+  text
 });
 
 export const setVisibilityFilter = (filter) => ({
-  type: actions.SET_VISIBILITY_FILTER,
+  type: actionsFilter.SET_VISIBILITY_FILTER,
   filter,
 });
 
