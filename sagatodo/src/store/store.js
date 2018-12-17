@@ -1,8 +1,8 @@
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import createHistory from 'history/createBrowserHistory';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
 import { createLogger } from 'redux-logger';
-// import { composeWithDevTools } from 'redux-devtools-extension';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import throttle from 'lodash/throttle';
 import thunk from 'redux-thunk';
 import createSagaMiddleware from 'redux-saga';
@@ -24,7 +24,7 @@ const configStore = () => {
       router: routerReducer
     }),
     persistentState,
-    compose(applyMiddleware(...middlewares)),
+    composeWithDevTools(applyMiddleware(...middlewares)),
   );
 
   sagaMiddleware.run(rootSaga);
