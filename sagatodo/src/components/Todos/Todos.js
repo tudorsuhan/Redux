@@ -19,7 +19,7 @@ class Todos extends Component {
   };
 
   render() {
-    const { todos, allCompleted, deleteCompleted } = this.props;
+    const { todos, deleteCompleted } = this.props;
     const size = this.state.size;
     if (todos.length === 0) {
       return <NoTodos text="No Todos" />;
@@ -29,9 +29,6 @@ class Todos extends Component {
       <form className={styles.todos}>
         <div className={styles['todos-actions']}>
           <div style={{ flexGrow: '1', marginLeft: '5px' }}>{todos.length} tasks</div>
-          <Tooltip title="Complete All">
-            <Button type="default" shape="circle" icon="check" size={size} onClick={allCompleted} />
-          </Tooltip>
           <Tooltip title="Delete All">
             <Button type="danger" shape="circle" icon="delete" size={size} onClick={deleteCompleted} />
           </Tooltip>

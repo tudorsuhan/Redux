@@ -53,7 +53,6 @@ class Todo extends Component {
   render() {
     const { todo, deleteTodo } = this.props;
     const { editable, value, isCondition } = this.state;
-    console.log(this.props);
 
     return (
       <div className={styles.todoItem} title={`Created ${timeDifference(todo.createTime)}`}>

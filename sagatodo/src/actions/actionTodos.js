@@ -75,10 +75,6 @@ const actions = {
     payload: { todo }
   }),
 
-  allCompleted: () => ({
-    type: actions.ALL_COMPLETED,
-  }),
-
   completeAllReturn: () => {
     return (dispatch, getState) => {
       const oldTodos = getState().Todos.todos;
