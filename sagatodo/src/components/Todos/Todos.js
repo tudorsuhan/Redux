@@ -5,7 +5,7 @@ import Todo from '../SingleTodo/SingleTodo.js';
 import NoTodos from '../NoTodos/NoTodos.js';
 
 // Antd
-import { Button } from 'antd';
+import { Button, Tooltip } from 'antd';
 import 'antd/dist/antd.css';
 
 // Styles
@@ -17,6 +17,7 @@ class Todos extends Component {
   state = {
     size: 'large',
   };
+
   render() {
     const { todos, allCompleted, deleteCompleted } = this.props;
     const size = this.state.size;
@@ -27,10 +28,13 @@ class Todos extends Component {
     return (
       <form className={styles.todos}>
         <div className={styles['todos-actions']}>
-          <Button type="default" shape="circle" icon="check" size={size} onClick={allCompleted} />
-          <Button type="danger" shape="circle" icon="delete" size={size} onClick={deleteCompleted} />
-          {/* <Button type="primary" onClick={allCompleted}>Complete</Button> */}
-          {/* <Button type="danger"  onClick={deleteCompleted}>Delete</Button> */}
+          <div style={{ flexGrow: '1', marginLeft: '5px' }}>{todos.length} tasks</div>
+          <Tooltip title="Complete All">
+            <Button type="default" shape="circle" icon="check" size={size} onClick={allCompleted} />
+          </Tooltip>
+          <Tooltip title="Delete All">
+            <Button type="danger" shape="circle" icon="delete" size={size} onClick={deleteCompleted} />
+          </Tooltip>
         </div>
         <div className={styles['todos-list']}>
           {todos.map(todo => (
@@ -45,7 +49,6 @@ class Todos extends Component {
 const mapStateToProps = (state) => ({
   todos: state.Todos.todos,
   showAllenabled: state.showAllenabled,
-  loading: state.loading,
 });
 
 export default connect(mapStateToProps, {

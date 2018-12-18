@@ -76,7 +76,7 @@ const actions = {
   }),
 
   allCompleted: () => ({
-    type: actions.ALL_COMPLETED
+    type: actions.ALL_COMPLETED,
   }),
 
   completeAllReturn: () => {

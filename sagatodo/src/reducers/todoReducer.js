@@ -22,10 +22,11 @@ const todoReducer = (state = initState, action) => {
         newTodoText,
         todos: action.todos,
         showAllenabled,
-        loading: false
       };
     case actions.EDIT_NEW_TODO:
       return { ...state, newTodoText: action.newTodoText };
+    case actions.COMPLETE_TODO: 
+      return { ...state }
     default:
       return state;
   }

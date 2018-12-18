@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import InputText from '../UserInput/inputText';
+import { connect } from 'react-redux';
 import { timeDifference } from '../../utils/timeDifference';
+import EditField from './EditField/EditField';
 
 // Antd
 import { Checkbox } from 'antd';
@@ -9,11 +10,18 @@ import 'antd/dist/antd.css';
 // Styles
 import styles from './SingleTodo.module.scss';
 
-export default class Todo extends Component {
+class Todo extends Component {
   state = {
     editable: false,
+    isCondition: false, 
     value: this.props.todo.todo
   };
+
+  handleIsCondition = () => {
+    this.setState({
+      isCondition: !this.state.isCondition
+    })
+  }
 
   onEditableClicked = () => {
     const { editable } = this.state;
@@ -32,23 +40,28 @@ export default class Todo extends Component {
     this.setState({ editable: false });
   }
 
-  onComplete = () => {
-    const { todo, completeTodo } = this.props;
-    todo.completed = !todo.completed;
-    completeTodo(todo);
+  onComplete = (event) => {
+    this.handleIsCondition();
+    if (event.target.checked) {
+      const { todo, completeTodo } = this.props;
+      todo.completed = !todo.completed;
+      completeTodo(todo);
+    } 
+    return console.log(`Checked`, event.target.checked);
   }
 
   render() {
     const { todo, deleteTodo } = this.props;
-    const { editable, value } = this.state;
+    const { editable, value, isCondition } = this.state;
+    console.log(this.props);
 
     return (
-      <div className={styles.todoItem} title={timeDifference(todo.createTime)}>
+      <div className={styles.todoItem} title={`Created ${timeDifference(todo.createTime)}`}>
         <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
           <div className={styles['todoItem__checked']}>
-            <Checkbox onClick={this.onComplete} on={todo.completed} />
+            <Checkbox onClick={this.onComplete} />
           </div>
-          <div className={styles['todoItem__task']}>{todo.todo}</div>
+          <div className={isCondition ? [styles['todoItem__task'], styles['todoItem__task-done']].join(' ') : styles['todoItem__task']}>{todo.todo}</div>
         </div>
         <div className={styles['todoItem-actions']}>
           <div className={styles['todoItem-actions__edit']}>
@@ -63,8 +76,8 @@ export default class Todo extends Component {
           </div>
         </div>
         {editable ? (
-          <div className={styles['todoItem__editable']}>
-            <InputText
+          <div className={styles['todoItem-editable']}>
+            <EditField
               onChange={this.onChange}
               onEnter={this.onEnter}
               id={todo.id}
@@ -76,3 +89,5 @@ export default class Todo extends Component {
     );
   }
 }
+
+export default connect()(Todo);

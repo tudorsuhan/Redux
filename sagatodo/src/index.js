@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { configStore } from './store/store';
 import App from './containers/App';
@@ -7,7 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 const store = configStore();
 
-ReactDOM.render(
+render(
   <Provider store={store}>
     <App />
   </Provider>,
