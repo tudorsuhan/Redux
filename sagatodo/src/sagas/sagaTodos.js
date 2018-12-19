@@ -31,10 +31,6 @@ export function* completeTodo({ payload }) {
   yield put(actions.editTodoReturn(todo));
 }
 
-export function* completeAll() {
-  yield put(actions.completeAllReturn());
-}
-
 export function* deleteCompleted() {
   yield put(actions.deleteCompletedReturn());
 }
@@ -45,7 +41,6 @@ export default function* rootSaga() {
     takeEvery(actions.DELETE_TODO, deleteTodo),
     takeEvery(actions.EDIT_TODO, editTodo),
     takeEvery(actions.COMPLETE_TODO, completeTodo),
-    takeEvery(actions.ALL_COMPLETED, completeAll),
     takeEvery(actions.DELETE_COMPLETED, deleteCompleted),
   ]);
 }

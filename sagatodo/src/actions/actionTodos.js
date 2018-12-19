@@ -107,17 +107,6 @@ const actions = {
       });
     };
   },
-  
-  showMoreReturn: (newTodos, showAllenabled) => {
-    return (dispatch, getState) => {
-      const oldTodos = getState().Todos.todos;
-      dispatch({
-        type: actions.CHANGE_TODO,
-        todos: [...oldTodos, ...newTodos],
-        showAllenabled
-      });
-    };
-  }
 };
 
 export default actions;
