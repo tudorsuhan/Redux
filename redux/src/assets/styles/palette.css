@@ -1,0 +1,28 @@
+:root {
+  /* HEX */
+  --paletteColor1: #000;
+  --paletteColor2: #fff;
+  --paletteColor3: #36397c;
+  --paletteColor4: #50e3c2;
+  --paletteColor5: #6798ff;
+  --paletteColor6: #575d70;
+  --paletteColor7: #cbdae6;
+  --paletteColor8: #777f97;
+  --paletteColor9: #686dce;
+  --paletteColor10: #3e4292;
+  --paletteColor11: #a8b2d0;
+  --paletteColor12: #c9c9c9;
+  --paletteColor13: #60c9ff;
+  --paletteColor14: #ea2f2f;
+  --paletteColor15: #f6dede;
+
+  /* RGB */
+  --rgbColor1: rgb(250, 255, 189);
+
+  /* RGBA */
+  --rgbaColor1: rgba(168, 178, 208, 0.4);
+  --rgbaColor2: rgba(168, 178, 208, 0.64);
+
+  /* Gradients */
+  --gradientColor1: linear-gradient(to bottom, #2df8cf 0%, #40b3f3 100%);
+}

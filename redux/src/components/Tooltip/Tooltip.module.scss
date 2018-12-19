@@ -1,0 +1,97 @@
+.tooltip {
+  position: absolute;
+  z-index: 20;
+  padding: 1.4rem;
+  width: 25rem;
+  display: none;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  font-family: var(--font-open-sans);
+  text-transform: none;
+  color: var(--paletteColor2);
+  background: var(--paletteColor1);
+  border-radius: 0.4rem;
+}
+
+.tooltip::before,
+.tooltip::after {
+  content: "";
+  position: absolute;
+  z-index: 40;
+  border-width: 0.6rem;
+  border-style: solid;
+  border-color: var(--paletteColor1);
+}
+
+.tooltip.show {
+  display: block;
+}
+
+/* Classes for specials states */
+.tooltip.error {
+  color: #000;
+  background: var(--paletteColor15);
+}
+
+.tooltip.error::before,
+.tooltip.error::after {
+  border: 0.6rem solid var(--paletteColor15);
+}
+
+/* ------------------------------- */
+
+.tooltip.position-top {
+  margin-top: -1.2rem;
+}
+
+.tooltip.position-top::before,
+.tooltip.position-top::after {
+  bottom: -1.2rem;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  left: 50%;
+  margin-left: -0.6rem;
+}
+
+.tooltip.position-bottom {
+  margin-top: 1.2rem;
+}
+
+.tooltip.position-bottom::before,
+.tooltip.position-bottom::after {
+  top: -1.2rem;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  left: 50%;
+  margin-left: -0.6rem;
+}
+
+.tooltip.position-right {
+  margin-left: 1.2rem;
+}
+
+.tooltip.position-right::before,
+.tooltip.position-right::after {
+  top: 50%;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  left: -1.2rem;
+  margin-top: -0.6rem;
+}
+
+.tooltip.position-left {
+  margin-left: -1.2rem;
+}
+
+.tooltip.position-left::before,
+.tooltip.position-left::after {
+  top: 50%;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  right: -1.2rem;
+  margin-top: -0.6rem;
+}
