@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import WithThunk from '../../components/Fetch/WithThunk/WithThunk';
+import WithThunk from '../../components/Fetch/WithThunk';
+import { connect } from 'react-redux';
 
-export default class ReduxThunk extends Component {
+class ReduxThunk extends Component {
   render() {
     return (
       <div>
@@ -10,3 +11,5 @@ export default class ReduxThunk extends Component {
     );
   }
 }
+
+export default connect()(ReduxThunk);

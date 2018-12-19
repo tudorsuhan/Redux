@@ -1,5 +1,5 @@
 export const actionTypes = {
   PENDING: 'PENDING',
-  SUCCESS: 'ERROR',
+  SUCCESS: 'SUCCESS',
   ERROR: 'ERROR'
 }
