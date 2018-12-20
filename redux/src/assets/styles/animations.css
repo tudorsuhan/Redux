@@ -1,9 +1,0 @@
-:root {
-  /* Transition:  */
-  --transition1: 0.25s;
-  --transition2: 0.15s;
-  --transition3: 0.1s linear;
-
-  /* Bezier */
-  --cubic1: cubic-bezier(0.55, 0.085, 0.68, 0.53);
-}
