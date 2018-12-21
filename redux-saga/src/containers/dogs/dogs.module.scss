@@ -1,0 +1,32 @@
+.dog {
+  position: relative;
+  text-align: center;
+
+  .dogHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    height: 300px;
+
+    .dogHeaderLogo {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+
+  .button {
+    padding: 7px 20px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 5px;
+    border: 2px solid #444;
+    background: transparent;
+    color: #444;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+  }
+}
