@@ -8,7 +8,7 @@ import * as act from '../actions/actionCreators';
 
 export const fetchApi = () => {
   return axios({
-    url: 'https://windows.softwsp.com/wp-json/wp/v2/posts',
+    url: 'https://windows.softwsp.com/wp-json/wp/v2/posts?per_page=30',
     method: 'GET',
   });
 }
@@ -16,13 +16,13 @@ export const fetchApi = () => {
 /**
  * Worker
  */
-export function* fetchDataWorker() {
+export function* fetchDataWorker(data) {
   try {
     const response = yield call(fetchApi);
     const results = response.data;
     
     console.log(results);
-    yield put(act.fetchSuccess());
+    yield put({ type: 'FETCH_SUCCESS', payload: { results } });
   } catch (error) {
     yield put(act.fetchError(), error.message);
   }

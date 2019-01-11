@@ -1,10 +1,10 @@
 // Core
 import { createSelector } from 'reselect';
 
-const getData = state => state.data;
+export const getDataRA = (state) => state.data.data;
 
 const getFetchData = createSelector(
-  getData,
+  getDataRA,
   data => data,
 );
 
