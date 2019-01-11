@@ -12,7 +12,6 @@ class FetchData extends Component {
   }
   
   render() {
-
     return (
       <div>
         App
