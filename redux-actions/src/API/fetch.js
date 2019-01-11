@@ -1,9 +1,9 @@
 // Core
 import axios from 'axios';
 
-export const fetch = () => {
+export const fetchApi = (url) => {
   return axios({
-    url: 'https://picsum.photos/list',
+    url: url,
     method: 'GET',
     headers: {
       'Accept': 'application/json',

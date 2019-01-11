@@ -2,38 +2,36 @@
 import { handleActions } from 'redux-actions';
 
 // Instruments
-import { types } from '../actions/actionTypes';
+import * as act from '../actions/actionCreators';
 
 const initialState = {
-  data: [],
   loading: false,
-  error: null,
-}
+  data: [],
+  error: false,
+};
 
-export const fetchData = handleActions(
-  {
-    [types.FETCH_STATUS]: (state, action) => {
-      return { ...state, loading: true }
-    },
-    [types.FETCH_SUCCESS]: (state, action) => {
-      return { ...state, loading: false, data: action.payload, error: null, } 
-    },
-    [types.FETCH_ERROR]: (state, action) => {
-      return { ...state, loading: false, data: [], error: action.payload, }
-    }
-  },
-  { initialState }
-);
+export const fetchDataStatus = (state) => ({
+  ...state,
+  loading: true,
+});
 
-// export const fetchData = (state = initialState, action) => {
-//   switch (action.type) {
-//     case types.FETCH_STATUS:
-//       return { ...state, loading: true, } 
-//     case types.FETCH_SUCCESS: 
-//       return { ...state, loading: false, data: action.payload.data, error: null, }
-//     case types.FETCH_ERROR: 
-//       return { ...state, loading: false, data: [], error: action.error }
-//     default:
-//       return state
-//   }
-// }
+export const fetchDataSuccess = (state, action) => {
+  const { data } = action.payload;
+  return {
+    ...state,
+    loading: false,
+    data,
+  }
+};
+
+export const fetchDataError = (state) => ({
+  ...state,
+  loading: false,
+  error: true,
+});
+
+export const fetchData = handleActions({
+    [act.fetchStatus]: fetchDataStatus,
+    [act.fetchSuccess]: fetchDataSuccess,
+    [act.fetchError]: fetchDataError
+}, initialState);

@@ -1,21 +1,30 @@
 // Core
 import { takeLatest, call, put } from 'redux-saga/effects';
+import axios from 'axios';
 
 // Instruments
-import { fetch } from '../API/fetch';
-import * as types from '../actions/actionCreators';
+// import { fetchApi } from '../API/fetch';
+import * as act from '../actions/actionCreators';
+
+export const fetchApi = () => {
+  return axios({
+    url: 'https://windows.softwsp.com/wp-json/wp/v2/posts',
+    method: 'GET',
+  });
+}
 
 /**
  * Worker
  */
-function* fetchDataWorker() {
+export function* fetchDataWorker() {
   try {
-    const response = yield call(fetch);
+    const response = yield call(fetchApi);
     const results = response.data;
+    
     console.log(results);
-    yield put(types.fetchSuccess, results);
+    yield put(act.fetchSuccess());
   } catch (error) {
-    yield put(types.fetchError, error.message);
+    yield put(act.fetchError(), error.message);
   }
 }
 
@@ -23,5 +32,5 @@ function* fetchDataWorker() {
  * Watcher
  */
 export function* fetchDataWatcher() {
-  yield takeLatest(types.fetchStatus, fetchDataWorker);
+  yield takeLatest(act.fetchStatus, fetchDataWorker);
 }

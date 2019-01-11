@@ -1,6 +1,7 @@
 // Core
 import { applyMiddleware, compose, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 // Instruments
 import monitorReducersEnhancer from '../enhancers/monitorReducers';
@@ -12,18 +13,10 @@ const devEnv = process.env.NODE_ENV === 'development';
 
 // Configure Store
 export function configStore(preloadedState) {
-  const sagaMiddleware = createSagaMiddleware({
-    emitter: emit => action => {
-      if (Array.isArray(action)) {
-        action.forEach(emit);
-        return;
-      }
-      emit(action);
-    }
-  });
+  const sagaMiddleware = createSagaMiddleware();
 
   const middlewares = [logger, sagaMiddleware];
-  const middlewareEnhancer = applyMiddleware(...middlewares);
+  const middlewareEnhancer = composeWithDevTools(applyMiddleware(...middlewares));
   if (devEnv) {
     middlewares.push(logger);
   }

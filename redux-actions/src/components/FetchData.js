@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 // Instruments
-import { fetchSuccess } from '../actions/actionCreators';
+import { fetchStatus } from '../actions/actionCreators';
 
 class FetchData extends Component {
   
@@ -12,22 +12,23 @@ class FetchData extends Component {
   }
   
   render() {
+
     return (
       <div>
-        
+        App
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
-  loading: state.loading,
+  loading: state.data.loading,
   data: state.data.data,
-  error: state.error,
+  error: state.data.error,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getData: () => dispatch(fetchSuccess()),
+  getData: () => dispatch(fetchStatus()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FetchData);
