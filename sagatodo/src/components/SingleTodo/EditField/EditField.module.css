@@ -1,0 +1,13 @@
+.editField {
+  width: 100%;
+  margin: 10px 0 5px;
+  position: relative;
+  padding: 5px 10px;
+  border: 1px solid #eee;
+  border-radius: 20px;
+}
+
+.editField:focus {
+  outline: none;
+}
+/*# sourceMappingURL=EditField.module.css.map */

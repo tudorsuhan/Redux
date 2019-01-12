@@ -1,0 +1,19 @@
+.noTodos {
+  height: calc(100vh - 200px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.noTodos h1 {
+  font-weight: 600;
+  font-size: 2rem;
+  color: #ddd;
+}
+/*# sourceMappingURL=NoTodos.module.css.map */

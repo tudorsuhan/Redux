@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,YAAY,CAAC;EACX,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,KAAK;EACb,UAAU,EAAE,UAAU;EACtB,UAAU,EAAE,IAAI;EAChB,MAAM,EAAE,MAAM;EACd,OAAO,EAAE,SAAS;EAClB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EACnB,UAAU,EAAE,GAAG,CAAC,IAAI,CAAC,IAAI,CAAC,GAAG,CAAC,wBAAwB;CACvD",
+    "sources": [
+        "NewTodo.module.scss"
+    ],
+    "names": [],
+    "file": "NewTodo.module.css"
+}

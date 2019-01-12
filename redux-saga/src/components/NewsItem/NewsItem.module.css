@@ -1,0 +1,72 @@
+.article {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  margin-bottom: 10px;
+  background: #eee;
+}
+
+.article .articleImage {
+  width: 200px;
+  height: 200px;
+  margin-right: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.article .articleWrapper {
+  width: calc(100% - 210px);
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.article .articleWrapper .articleTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #444;
+  margin: 0;
+}
+
+.article .articleWrapper .articleDescription {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #bbb;
+}
+
+.article .articleWrapper .articleLink {
+  position: relative;
+}
+
+.article .articleWrapper .articleLink a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #222;
+  text-transform: uppercase;
+}
+/*# sourceMappingURL=NewsItem.module.css.map */

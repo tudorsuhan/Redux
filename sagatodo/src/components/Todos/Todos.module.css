@@ -1,0 +1,37 @@
+.todos {
+  width: 100%;
+  position: relative;
+}
+
+.todos .todos-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+@media screen and (max-width: 992px) {
+  .todos .todos-actions {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+.todos .todos-actions button {
+  margin: 0 5px;
+}
+
+@media screen and (max-width: 992px) {
+  .todos .todos-list {
+    padding: 0 20px;
+  }
+}
+/*# sourceMappingURL=Todos.module.css.map */
