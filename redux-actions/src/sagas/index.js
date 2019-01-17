@@ -1,11 +1,11 @@
 // Core
-import { all } from 'redux-saga/effects';
+import { all, spawn  } from 'redux-saga/effects';
 
 // Instruments
-import { fetchDataWatcher } from './fetchData';
+import { fetchDataWatcher } from './watchers/fetchData';
 
 export default function* rootSaga() {
   yield all([
-    fetchDataWatcher(),
+    spawn(fetchDataWatcher),
   ]);
 }

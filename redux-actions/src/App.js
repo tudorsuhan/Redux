@@ -1,6 +1,7 @@
 // Core
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from "react-router-dom";
 
 // Instruments
 import './App.scss';
@@ -15,9 +16,11 @@ export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div className="App">
-          <FetchDataContainer />
-        </div>
+        <Router>
+          <div className="App">
+            <FetchDataContainer />
+          </div>
+        </Router>
       </Provider>
     );
   }
