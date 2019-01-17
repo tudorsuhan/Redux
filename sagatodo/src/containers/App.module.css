@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #eee;
+  font-family: 'Fira Sans', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+input::-webkit-input-placeholder,
+button {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+}
+
+.app {
+  position: relative;
+}
+/*# sourceMappingURL=App.module.css.map */

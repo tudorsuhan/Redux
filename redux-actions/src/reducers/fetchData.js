@@ -16,11 +16,10 @@ export const fetchDataStatus = (state) => ({
 });
 
 export const fetchDataSuccess = (state, action) => {
-  const { data } = action.payload;
   return {
     ...state,
     loading: false,
-    data,
+    data: action.payload,
   }
 };
 

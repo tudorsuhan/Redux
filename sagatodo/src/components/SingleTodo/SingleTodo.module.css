@@ -1,0 +1,103 @@
+.todoItem {
+  width: 50%;
+  margin: 0 auto 5px;
+  padding: 12px 20px;
+  background: #fff;
+  border-radius: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+@media screen and (max-width: 992px) {
+  .todoItem {
+    width: 100%;
+  }
+}
+
+.todoItem__checked {
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todoItem__task {
+  width: auto;
+  margin-right: 20px;
+}
+
+.todoItem__task-done {
+  text-decoration: line-through;
+}
+
+.todoItem-actions {
+  width: 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todoItem-actions__edit .button {
+  width: 70px;
+  border: none;
+  border-radius: 10px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.todoItem-actions__edit .button--edit {
+  background: #cffcd5;
+  color: #08ad1e;
+  border: none;
+  border-radius: 15px;
+  padding: 7px 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.todoItem-actions__delete .button {
+  width: 70px;
+  border: none;
+  border-radius: 10px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.todoItem-actions__delete .button--delete {
+  background: #ffefc2;
+  color: #ffbb00;
+  border: none;
+  border-radius: 15px;
+  padding: 7px 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.todoItem-editable {
+  position: relative;
+  width: 100%;
+}
+/*# sourceMappingURL=SingleTodo.module.css.map */

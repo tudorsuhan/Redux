@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM;AACN,KAAK,CAAC;EACJ,KAAK,EAAE,GAAG;CACX",
+    "sources": [
+        "FetchFiles.module.scss"
+    ],
+    "names": [],
+    "file": "FetchFiles.module.css"
+}
