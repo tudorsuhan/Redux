@@ -10,18 +10,18 @@ import { fetchStatus } from '../actions/actionCreators';
 class FetchData extends Component {
 
   static propTypes = {
-    match: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired,
-    history: PropTypes.object.isRequired
+    match: PropTypes.object.isRequired,
   };
-  
+
   componentDidMount() {
     this.props.getData();
   }
-  
+
   render() {
     console.log(this.props);
-    
+
     return (
       <div>
         App
