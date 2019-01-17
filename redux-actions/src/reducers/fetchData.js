@@ -20,7 +20,7 @@ export const fetchDataSuccess = (state, action) => {
     ...state,
     loading: false,
     data: action.payload,
-  }
+  };
 };
 
 export const fetchDataError = (state) => ({
@@ -30,7 +30,7 @@ export const fetchDataError = (state) => ({
 });
 
 export const fetchData = handleActions({
-    [act.fetchStatus]: fetchDataStatus,
-    [act.fetchSuccess]: fetchDataSuccess,
-    [act.fetchError]: fetchDataError
+  [act.fetchStatus]: fetchDataStatus,
+  [act.fetchSuccess]: fetchDataSuccess,
+  [act.fetchError]: fetchDataError,
 }, initialState);

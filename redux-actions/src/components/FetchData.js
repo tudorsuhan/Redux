@@ -20,11 +20,27 @@ class FetchData extends Component {
   }
 
   render() {
-    console.log(this.props);
+    const { data, loading, error } = this.props;
+
+    if (!data) {
+      return <div>No data available...</div>;
+    }
+    if (loading) {
+      return <div>Loading...</div>;
+    }
+    if (error) {
+      return <div>{error.message}</div>;
+    }
 
     return (
       <div>
-        App
+        {
+          Object.values(data).map((result) => (
+            result.map((i) => (
+              <div key={i.id}>{i.title.rendered}</div>
+            ))
+          ))
+        }
       </div>
     );
   }
