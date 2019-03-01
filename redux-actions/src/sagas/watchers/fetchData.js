@@ -11,6 +11,6 @@ function* watchGetData() {
 
 export function* fetchDataWatcher() {
   yield all([
-    watchGetData(),
+    watchGetData()
   ]);
 }

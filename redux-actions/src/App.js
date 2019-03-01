@@ -9,6 +9,7 @@ import { configStore } from './store/configStore';
 
 // Components
 import FetchDataContainer from './containers/FetchData';
+import ImageDataContainer from './containers/ImageData';
 
 const store = configStore();
 
@@ -18,6 +19,7 @@ export default class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
+            <ImageDataContainer />
             <FetchDataContainer />
           </div>
         </Router>
