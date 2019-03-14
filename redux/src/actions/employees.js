@@ -1,7 +1,7 @@
 import { createAction } from 'redux-actions';
 
-const employeesStatus = createAction('employees_STATUS', loading => loading);
-const employeesSuccess = createAction('employees_SUCCESS', employees => employees);
-const employeesError = createAction('employees_ERROR', error => error);
+const employeesStatus = createAction('EMPLOYEES_STATUS', loading => loading);
+const employeesSuccess = createAction('EMPLOYEES_SUCCESS', employees => employees);
+const employeesError = createAction('EMPLOYEES_ERROR', error => error);
 
 export { employeesStatus, employeesSuccess, employeesError };
