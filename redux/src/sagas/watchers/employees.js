@@ -4,7 +4,7 @@ import * as actions from '../../actions/employees';
 import { employeesDataWorker } from '../workers/employees';
 
 export function* watchGetEmployeesInfo() {
-  yield takeEvery(actions.employeesSuccess, employeesDataWorker);
+  yield takeEvery(actions.employeesStatus, employeesDataWorker);
 }
 
 export function* employeesDataWatcher() {
