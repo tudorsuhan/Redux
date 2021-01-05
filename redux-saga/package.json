@@ -5,7 +5,7 @@
   "proxy": "https://android.softwsp.com/",
   "dependencies": {
     "antd": "^3.11.2",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "husky": "^1.2.0",
     "lint-staged": "^8.1.0",
     "node-sass": "^4.11.0",
